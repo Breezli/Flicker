@@ -1,0 +1,27 @@
+// 断点
+$breakpoints: (
+	'xs': 320px,
+	'sm': 576px,
+	'md': 768px,
+	'lg': 992px,
+	'xl': 1200px,
+	'xxl': 1400px,
+);
+
+// 媒体查询混合
+@mixin respond-to($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	}
+}
+
+// 主题色
+$primary-color: #f8811b;
+$secondary-color: #c45834;
+$tertiary-color: #eb554e;
+$quaternary-color: #caaea2;
+$text-color: #29373b;
+$sub-text-color: #a6abaf;
+$border-color: #f0eef1;
